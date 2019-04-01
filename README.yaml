@@ -1,0 +1,44 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+# Name of this project
+name: terraform-http-ip
+# Logo for this project
+#logo: docs/slalom-logo.png
+# License of this project
+license: "APACHE2"
+# Copyrights
+copyrights:
+  - name: "Slalom, LLC"
+    url: "https://slalom.com"
+    year: "2019"
+# Canonical GitHub repo
+github_repo: JamesWoolfenden/terraform-http-ip
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://travis-ci.com/JamesWoolfenden/terraform-http-ip.svg?branch=master"
+    url: "https://travis-ci.com/JamesWoolfenden/terraform-http-ip"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg"
+    url: "https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest"
+# Short description of this project
+description: |-
+  This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
+usage: |-
+  Expecting a minimal usage.
+
+  module "data" {
+  
+     source = "../../"
+  
+  }
+# Other files to include in this README from the project folder
+include:
+  - "docs/terraform.md"
+# Contributors to this project
+contributors:
+  - name: "James Woolfenden"
+    github: "jameswoolfenden"
