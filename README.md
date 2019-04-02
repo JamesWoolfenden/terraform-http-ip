@@ -4,7 +4,7 @@
 
 terraform-http-ip [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-http-ip) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg)](https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest)
 
-This `terraform-http-ip` is designed to return the public ip of the box running terraform, it's designed for use in a security group.
+This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
 
 ---
 
@@ -17,10 +17,12 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 Expecting a minimal usage.
 
 module "data" {
-
-   source = "../../"
-
+   source = "jameswoolfenden/ip/http"
+   version= "0.1.3"
 }
+and to use it output
+
+${module.data.ip}
 
 ## Outputs
 

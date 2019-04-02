@@ -31,10 +31,13 @@ usage: |-
   Expecting a minimal usage.
 
   module "data" {
-  
-     source = "../../"
-  
+     source = "jameswoolfenden/ip/http"
+     version= "0.1.3"
   }
+  and to use it output
+
+  ${module.data.ip}
+
 # Other files to include in this README from the project folder
 include:
   - "docs/terraform.md"
