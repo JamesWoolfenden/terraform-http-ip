@@ -1,3 +1,3 @@
-provider "http"{
-   version="1.0" 
+provider "http" {
+  version = "1.0"
 }
