@@ -16,13 +16,18 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 Expecting a minimal usage.
 
+```terraform
 module "data" {
    source = "jameswoolfenden/ip/http"
    version= "0.1.3"
 }
-and to use it output
+```
 
+And to use the value:
+
+```terraform
 ${module.data.ip}
+```
 
 ## Outputs
 
