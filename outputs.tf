@@ -1,3 +1,3 @@
 output "ip" {
-  value = "${chomp(data.http.ip.body)}"
+  value = chomp(data.http.ip.body)
 }
