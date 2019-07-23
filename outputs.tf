@@ -1,3 +1,4 @@
 output "ip" {
-  value = chomp(data.http.ip.body)
+  description = "Your IP"
+  value       = chomp(data.http.ip.body)
 }
