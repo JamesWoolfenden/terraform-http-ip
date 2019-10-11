@@ -17,12 +17,32 @@ module "data" {
    source = "jameswoolfenden/ip/http"
    version= "0.2.5"
 }
+
+It has an output of ip so in your code e.g.
+```tf
+master_authorized_networks_config {
+  cidr_blocks {
+    cidr_block = "${module.data.ip}/32"
+    }
+}
 ```
+
+or as a CIDR
+
+```tf
+master_authorized_networks_config {
+  cidr_blocks {
+    cidr_block = module.data.cidr
+    }
+}
+```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Outputs
 
 | Name | Description |
 |------|-------------|
+| cidr |  |
 | ip | Your IP |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
