@@ -1,6 +1,6 @@
 [![Slalom][logo]](https://slalom.com)
 
-terraform-http-ip [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-http-ip) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg)](https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest)
+# terraform-http-ip [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-http-ip) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg)](https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest)
 
 This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
 
@@ -61,7 +61,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-http
 
 ## Copyrights
 
-Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 
 ## License
 
