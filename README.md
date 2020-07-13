@@ -9,7 +9,6 @@
 This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
 
 ---
-
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
@@ -19,21 +18,37 @@ Expecting a minimal usage.
 ```terraform
 module "data" {
    source = "jameswoolfenden/ip/http"
-   version= "0.1.3"
+   version= "0.2.5"
+}
+
+It has an output of ip so in your code e.g.
+```tf
+master_authorized_networks_config {
+  cidr_blocks {
+    cidr_block = "${module.data.ip}/32"
+    }
 }
 ```
 
-And to use the value:
+or as a CIDR
 
-```terraform
-module.data.ip
+```tf
+master_authorized_networks_config {
+  cidr_blocks {
+    cidr_block = module.data.cidr
+    }
+}
 ```
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| ip | - |
+| cidr |  |
+| ip | Your IP |
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Help
 
@@ -76,8 +91,7 @@ under the License.
 
 ### Contributors
 
-|  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
-|---|
+  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
   [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
   [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
@@ -92,5 +106,4 @@ under the License.
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-http-ip&url=https://github.com/JamesWoolfenden/terraform-http-ip
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-http-ip
 [share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-http-ip
-[share_googleplus]: https://plus.google.com/share?url=https://github.com/JamesWoolfenden/terraform-http-ip
 [share_email]: mailto:?subject=terraform-http-ip&body=https://github.com/JamesWoolfenden/terraform-http-ip
