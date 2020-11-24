@@ -1,14 +1,13 @@
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-http-ip
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-http-ip) 
+[![Build Status](https://github.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-http-ip)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg)](https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
 
 ---
+
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
@@ -41,12 +40,13 @@ master_authorized_networks_config {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Outputs
 
 | Name | Description |
-|------|-------------|
-| cidr |  |
-| ip | Your IP |
+| ---- | ----------- |
+| cidr |             |
+| ip   | Your IP     |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -64,7 +64,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-http
 
 ## Copyrights
 
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -73,35 +73,33 @@ Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
-  [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-  [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
+[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
+[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-http-ip&url=https://github.com/JamesWoolfenden/terraform-http-ip
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-http-ip&url=https://github.com/JamesWoolfenden/terraform-http-ip
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-http-ip

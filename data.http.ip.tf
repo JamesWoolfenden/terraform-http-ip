@@ -1,3 +1,3 @@
 data "http" "ip" {
-  url = "http://ipv4.icanhazip.com"
+  url = "https://ipv4.icanhazip.com"
 }
