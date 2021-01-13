@@ -3,6 +3,7 @@
 [![Build Status](https://github.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-http-ip)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg)](https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-http-ip/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-http-ip&benchmark=INFRASTRUCTURE+SECURITY)
 
 This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
 
@@ -40,13 +41,26 @@ master_authorized_networks_config {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| http | n/a |
+
+## Inputs
+
+No input.
 
 ## Outputs
 
 | Name | Description |
-| ---- | ----------- |
-| cidr |             |
-| ip   | Your IP     |
+|------|-------------|
+| cidr | n/a |
+| ip | Your IP |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -64,7 +78,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-http
 
 ## Copyrights
 
-Copyright © 2019-2020 James Woolfenden
+Copyright © 2019-2021 James Woolfenden
 
 ## License
 
