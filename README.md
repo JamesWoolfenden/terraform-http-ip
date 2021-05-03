@@ -24,8 +24,10 @@ module "data" {
    source = "jameswoolfenden/ip/http"
    version= "0.3.2"
 }
+```
 
 It has an output of ip so in your code e.g.
+
 ```tf
 master_authorized_networks_config {
   cidr_blocks {
