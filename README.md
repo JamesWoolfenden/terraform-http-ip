@@ -1,6 +1,6 @@
 # terraform-http-ip
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-http-ip)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-http-ip/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-http-ip)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg)](https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-http-ip.svg?label=latest)](https://github.com/JamesWoolfenden/terraform--http-ip/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
