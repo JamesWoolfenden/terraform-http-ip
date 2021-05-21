@@ -55,19 +55,28 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| http | n/a |
+| <a name="provider_http"></a> [http](#provider\_http) | n/a |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [http_http.ip](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
 
 ## Inputs
 
-No input.
+No inputs.
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| cidr | n/a |
-| ip | Your IP |
-
+| <a name="output_cidr"></a> [cidr](#output\_cidr) | n/a |
+| <a name="output_ip"></a> [ip](#output\_ip) | Your IP |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Help
