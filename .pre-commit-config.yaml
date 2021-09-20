@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 default_language_version:
-  python: python3
+  python: python3.8
 repos:
   - repo: git://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
@@ -15,23 +15,21 @@ repos:
       - id: pretty-format-json
         args:
           - --autofix
+      - id: detect-aws-credentials
+        args:
+          - --allow-missing-credentials
       - id: detect-private-key
   - repo: git://github.com/Lucas-C/pre-commit-hooks
     rev: v1.1.10
     hooks:
       - id: forbid-tabs
-        exclude_types:
-          - python
-          - javascript
-          - dtd
-          - markdown
-          - makefile
-          - xml
+        exclude_types: [python, javascript, dtd, markdown, makefile, xml]
         exclude: binary|\.bin$
   - repo: git://github.com/jameswoolfenden/pre-commit-shell
     rev: 0.0.2
     hooks:
       - id: shell-lint
+        exclude: template|\.template$
   - repo: git://github.com/igorshubovych/markdownlint-cli
     rev: v0.28.1
     hooks:
@@ -50,7 +48,21 @@ repos:
     hooks:
       - id: terraform-fmt
         language_version: python3.8
-      - id: checkov-scan
-        language_version: python3.8
       - id: tf2docs
         language_version: python3.8
+  - repo: git://github.com/bridgecrewio/checkov
+    rev: 2.0.149
+    hooks:
+      - id: checkov
+        verbose: true
+        entry: checkov -d example/examplea --external-checks-dir checkov
+  - repo: git://github.com/tfsec/tfsec
+    rev: v0.39.34
+    hooks:
+      - id: tfsec
+        entry: tfsec
+        args:
+          - example/examplea
+        types:
+          - terraform
+        pass_filenames: false

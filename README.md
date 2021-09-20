@@ -1,8 +1,12 @@
 # terraform-http-ip
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-http-ip.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-http-ip)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-http-ip/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-http-ip)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-http-ip.svg)](https://github.com/JamesWoolfenden/terraform-http-ip/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-http-ip.svg?label=latest)](https://github.com/JamesWoolfenden/terraform--http-ip/releases/latest)
+![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-http-ip/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-http-ip&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-http-ip/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-http-ip&benchmark=INFRASTRUCTURE+SECURITY)
 
 This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
@@ -20,8 +24,10 @@ module "data" {
    source = "jameswoolfenden/ip/http"
    version= "0.3.2"
 }
+```
 
 It has an output of ip so in your code e.g.
+
 ```tf
 master_authorized_networks_config {
   cidr_blocks {
@@ -118,8 +124,6 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
