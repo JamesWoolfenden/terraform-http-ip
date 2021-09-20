@@ -75,7 +75,7 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_cidr"></a> [cidr](#output\_cidr) | n/a |
+| <a name="output_cidr"></a> [cidr](#output\_cidr) | Outputs your IP address as a CIDR |
 | <a name="output_ip"></a> [ip](#output\_ip) | Your IP |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

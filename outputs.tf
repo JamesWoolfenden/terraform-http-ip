@@ -4,5 +4,6 @@ output "ip" {
 }
 
 output "cidr" {
-  value = "${chomp(data.http.ip.body)}/32"
+  value       = "${chomp(data.http.ip.body)}/32"
+  description = "Outputs your IP address as a CIDR"
 }
