@@ -54,8 +54,9 @@ jobs:
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      - uses: hashicorp/setup-terraform@v1
       - name: terraform test
-        uses: hashicorp/setup-terraform@v1
+        id: test
         run: terraform test
         continue-on-error: false
 
