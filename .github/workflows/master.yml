@@ -9,7 +9,7 @@ on:
     branches:
       - master
 env:
-  terraform: 0.15.0
+  terraform: 1.0.3
   tf_target_dir: example/examplea
   branch: master
 jobs:
@@ -54,15 +54,11 @@ jobs:
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      - name: Terraform Test
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: ${{ env.terraform }}
-          tf_actions_subcommand: test
-          tf_actions_working_dir: .
-        env:
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      - name: terraform test
+        uses: hashicorp/setup-terraform@v1
+        run: terraform test
+        continue-on-error: false
+
   security:
     runs-on: ubuntu-latest
     steps:
