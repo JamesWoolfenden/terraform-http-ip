@@ -9,7 +9,7 @@
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-http-ip/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-http-ip&benchmark=INFRASTRUCTURE+SECURITY)
 
-This `terraform-http-ip` is designed to return the public ip of the box running terraform, its designed for use in a security group.
+This `terraform-http-ip` is designed to return the public IP of the box running terraform, it's designed for use in a security group.
 
 ---
 
@@ -17,7 +17,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
 
-Expecting a minimal usage.
+Expecting minimal usage.
 
 ```terraform
 module "data" {
@@ -93,7 +93,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-http
 
 ## Copyrights
 
-Copyright © 2019-2022 James Woolfenden
+Copyright © 2019-2023 James Woolfenden
 
 ## License
 
@@ -124,11 +124,3 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/in/jameswoolfenden/
-[twitter]: https://twitter.com/JimWoolfenden
-[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-http-ip&url=https://github.com/JamesWoolfenden/terraform-http-ip
-[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-http-ip&url=https://github.com/JamesWoolfenden/terraform-http-ip
-[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-http-ip
-[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-http-ip
-[share_email]: mailto:?subject=terraform-http-ip&body=https://github.com/JamesWoolfenden/terraform-http-ip
