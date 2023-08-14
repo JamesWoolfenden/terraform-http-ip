@@ -1,6 +1,6 @@
 ---
 # yamllint disable rule:line-length
-name: Verify and Bump
+name: Verify
 on:
   schedule:
     - cron: "00 7 * * SUN"
