@@ -2,20 +2,22 @@
 # yamllint disable rule:line-length
 name: Verify
 on:
-  schedule:
-    - cron: "00 7 * * SUN"
   workflow_dispatch:
   push:
     branches:
       - master
+permissions: read-all
+
 env:
-  terraform: 1.0.3
+  terraform: 1.3.0
   tf_target_dir: example/examplea
   branch: master
+  GITHUB_API_TOKEN: ${{ github.token }}
 jobs:
   terraform:
     runs-on: ubuntu-latest
     steps:
+      - uses: hashicorp/setup-terraform@633666f66e0061ca3b725c73b2ec20cd13a8fdd1 # v2.0.3
       - name: Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
@@ -23,7 +25,7 @@ jobs:
           token: ${{ github.token }}
       - name: Config Terraform plugin cache
         run: |
-          echo 'plugin_cache_dir="$HOME/.terraform.d/plugin-cache"' >~/.terraformrc
+          echo "plugin_cache_dir=$HOME/.terraform.d/plugin-cache" >~/.terraformrc
           mkdir --parents ~/.terraform.d/plugin-cache
       - name: Cache Terraform
         uses: actions/cache@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
@@ -34,23 +36,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-terraform-
       - name: Terraform Init
-        uses: hashicorp/terraform-github-actions@b2ca17c0c25198c67c668c37edcbc45ca086a91e # v0.8.0
-        with:
-          tf_actions_version: ${{ env.terraform }}
-          tf_actions_subcommand: init
-          tf_actions_working_dir: ${{ env.tf_target_dir }}
-      - name: Terraform Validate
-        uses: hashicorp/terraform-github-actions@b2ca17c0c25198c67c668c37edcbc45ca086a91e # v0.8.0
-        with:
-          tf_actions_version: ${{ env.terraform }}
-          tf_actions_subcommand: validate
-          tf_actions_working_dir: ${{ env.tf_target_dir }}
-      - name: Terraform Plan
-        uses: hashicorp/terraform-github-actions@b2ca17c0c25198c67c668c37edcbc45ca086a91e # v0.8.0
-        with:
-          tf_actions_version: ${{ env.terraform }}
-          tf_actions_subcommand: plan
-          tf_actions_working_dir: ${{ env.tf_target_dir }}
+        id: init
+        run: terraform init
+        working-directory: ${{ env.tf_target_dir }}
+      - name: Terraform validate
+        id: validate
+        run: terraform validate
+        working-directory: ${{ env.tf_target_dir }}
+      - name: Terraform plan
+        id: plan
+        run: terraform plan
+        working-directory: ${{ env.tf_target_dir }}
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -72,18 +68,23 @@ jobs:
         with:
           python-version: 3.11
       - run: |
-          pip3 install lastversion
-          lastversion terraform-docs --assets -d --verbose
-          mkdir $GITHUB_WORKSPACE/bin
-          tar -xvf terraform-docs*.tar.gz --directory $GITHUB_WORKSPACE/bin
-          chmod +x $GITHUB_WORKSPACE/bin/terraform-docs
-          echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
+          mkdir "$GITHUB_WORKSPACE/bin"
+          wget https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-amd64.tar.gz
+          tar -xvf terraform-docs*.tar.gz --directory "$GITHUB_WORKSPACE/bin"
+          chmod +x "$GITHUB_WORKSPACE/bin/terraform-docs"
+          wget https://github.com/rhysd/actionlint/releases/download/v1.6.23/actionlint_1.6.23_linux_amd64.tar.gz
+          tar -xvf actionlint_1.6.23_linux_amd64.tar.gz --directory "$GITHUB_WORKSPACE/bin"
+          chmod +x "$GITHUB_WORKSPACE/bin/actionlint"
+          echo "$GITHUB_WORKSPACE/bin" >> "$GITHUB_PATH"
       - uses: pre-commit/action@646c83fcd040023954eafda54b4db0192ce70507 # v3.0.0
   version:
+    permissions: write-all
     name: versioning
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+        with:
+          fetch-depth: '0'
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@a2c70ae13a881faf2b4953baaa9e49731997ab36 # 1.67.0
         env:
